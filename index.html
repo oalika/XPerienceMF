@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <!-- GENERAL METADATA: -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <title>Publications hybrides</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/jquery-1.9.1.js"></script>
+    <script src="scripts/jquery-ui-1.9.2.custom.js"></script>
+</head>
+
+<body>
+    <h1>Design et publications hybrides</h1>
+    <h2>Ceci est un titre de niveau 2</h2>
+    <h3>Ceci est un titre de niveau 3</h3>
+    <p>Pour un web plus accessible, la structuration des pages est importante.</p>
+    <p>Ceci est une maquette de base que vous pouvez réutiliser pour commencer à coder vos sites.</p>
+    <h2>Une image peut cacher des contenus</h2>
+
+    <figure>
+        <img src="images/publications-hybrides.png" alt="Diagramme montrant l'évolution des formes de publications, des tablettes aux publications hybrides.">
+        <figcaption>Légende: Publications hybrides</figcaption>
+    </figure>
+
+    <p class="print-only surprise">Version imprimée!</p>
+
+    <h2>Un lien peut cacher des contenus</h2>
+    <p>Écrire <a href="page-2.html">cliquez ici</a> n’est en fait pas très accessible.</p>
+    <p>Lien vers <a href="page-2.html">une deuxième page avec des ressources</a>.</p>
+
+    <h2>Boîte à outils d’interactions</h2>
+
+    <div class="outils">
+        <div class="outil screen-only">
+            <p>Modifier (couleur, typo, taille …)<br>attention aux <a href="https://openweb.eu.org/articles/accessibilite_contrastes_textes_sites">contrastes</a></p>
+            <div style="cursor: pointer">
+                <span class="click-blue" style="color: blue">●</span>
+                <span class="click-yellow" style="color: yellow">●</span>
+                <span class="click-black" style="color: black">●</span><br>
+                <button class="negatif-click">
+                    FOND
+                </button>
+            </div>
+        </div>
+        <div class="outil">
+            <div class="texte-a-changer">
+            Responsive<br>
+            “Le texte doit pouvoir être agrandi de 200 %. Pour cela, il faut techniquement exprimer les tailles de caractères en unités relatives (em, %), et veiller à ce que le texte reste lisible une fois zoomé. Celui-ci doit pouvoir s’écouler sur plus (ou moins) de lignes que prévu sans dégrader la composition. C’est trop rarement bien fait et les internautes s’en plaignent.”
+            <br><br><a href="http://romy.tetue.net/ameliorer-lisibilite-typographique?lang=fr">Améliorer la lisibilité typographique</a>
+            </div>
+        </div>
+
+        <div class="outil">
+            <p>Éditer</p>
+            <div contenteditable="true" spellcheck="false" style="font-size: 40px; width: 400px;">ÉDITEZ-MOI</div>
+            <p>Déplacer</p>
+            <div class="draggable" style="font-size: 40px; cursor: move;">BOUGEZ-MOI</div>
+        </div>
+    </div>
+
+
+
+    <script src="scripts/script.js"></script>
+    <script type="text/javascript">
+        $('a[href^="https://"]').not('a[href*=design-research]').attr('target','_blank');
+        $(function() {
+            $(".draggable").draggable();
+        });
+        $('.negatif-click').click(function() {
+            $("body").toggleClass("negatif");
+        });
+        $(".click-blue").click(function () {
+            $(".texte-a-changer").css("color", "blue");
+        });
+        $(".click-yellow").click(function () {
+            $(".texte-a-changer").css("color", "yellow");
+        });
+        $(".click-black").click(function () {
+            $(".texte-a-changer").css("color", "black");
+        });
+
+    </script>
+
+</body>
